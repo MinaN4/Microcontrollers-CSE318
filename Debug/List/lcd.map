@@ -1,0 +1,290 @@
+###############################################################################
+#
+# IAR ELF Linker V8.50.4.261/W32 for ARM                  21/Aug/2020  18:43:30
+# Copyright 2007-2020 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\minan\Desktop\mid micro\calc final\Debug\Exe\lcd.out
+#    Map file     =
+#        C:\Users\minan\Desktop\mid micro\calc final\Debug\List\lcd.map
+#    Command line =
+#        -f C:\Users\minan\AppData\Local\Temp\EWD106.tmp
+#        ("C:\Users\minan\Desktop\mid micro\calc
+#        final\driverlib\ewarm\Exe\driverlib.a" "C:\Users\minan\Desktop\mid
+#        micro\calc final\Debug\Obj\main.o" --no_out_extension -o
+#        "C:\Users\minan\Desktop\mid micro\calc final\Debug\Exe\lcd.out"
+#        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
+#        --map "C:\Users\minan\Desktop\mid micro\calc final\Debug\List\lcd.map"
+#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.4\arm\config\linker\TexasInstruments\TM4C123GH6.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0x40
+  .intvec            ro code          0x0    0x40  vector_table_M.o [5]
+                                   - 0x40    0x40
+
+"P1":                                      0x1370
+  .text              ro code         0x40   0xabc  main.o [1]
+  .text              ro code        0xafc   0x128  sysctl.o [3]
+  .text              ro code        0xc24   0x14e  gpio.o [3]
+  .text              ro code        0xd72    0x3a  zero_init3.o [5]
+  .text              ro code        0xdac    0x36  strlen.o [5]
+  .text              ro code        0xde2    0x2e  copy_init3.o [5]
+  .text              ro code        0xe10    0x22  S32ToDbl.o [4]
+  .text              ro code        0xe32     0x2  vector_table_M.o [5]
+  .text              ro code        0xe34   0x246  DblDiv.o [4]
+  .text              ro code       0x107c   0x1a2  DblMul.o [4]
+  .text              ro code       0x1220    0x3a  DblToS32.o [4]
+  .text              ro code       0x125c    0x20  DblCmpEq.o [4]
+  Initializer bytes  const         0x127c    0x30  <for P2-1>
+  .text              ro code       0x12ac    0x28  data_init.o [5]
+  .text              ro code       0x12d4    0x22  fpinit_M.o [4]
+  .iar.init_table    const         0x12f8    0x24  - Linker created -
+  .text              ro code       0x131c    0x1e  cmain.o [5]
+  .text              ro code       0x133a     0x4  low_level_init.o [2]
+  .text              ro code       0x133e     0x4  exit.o [2]
+  .text              ro code       0x1344     0xa  cexit.o [5]
+  .text              ro code       0x1350    0x14  exit.o [6]
+  .rodata            const         0x1364    0x18  main.o [1]
+  .rodata            const         0x137c    0x14  main.o [1]
+  .rodata            const         0x1390    0x14  main.o [1]
+  .text              ro code       0x13a4     0xc  cstartup_M.o [5]
+  .rodata            const         0x13b0     0x0  zero_init3.o [5]
+  .rodata            const         0x13b0     0x0  copy_init3.o [5]
+                                 - 0x13b0  0x1370
+
+"P2", part 1 of 3:                           0x30
+  P2-1                        0x2000'0000    0x30  <Init block>
+    .data            inited   0x2000'0000    0x10  main.o [1]
+    .data            inited   0x2000'0010    0x10  main.o [1]
+    .data            inited   0x2000'0020    0x10  main.o [1]
+                            - 0x2000'0030    0x30
+
+"P2", part 2 of 3:                           0xac
+  .bss               zero     0x2000'0030    0x40  main.o [1]
+  .bss               zero     0x2000'0070    0x40  main.o [1]
+  .bss               zero     0x2000'00b0     0x8  main.o [1]
+  .bss               zero     0x2000'00b8     0x4  main.o [1]
+  .bss               zero     0x2000'00bc     0x4  main.o [1]
+  .bss               zero     0x2000'00c0     0x4  main.o [1]
+  .bss               zero     0x2000'00c4     0x4  main.o [1]
+  .bss               zero     0x2000'00c8     0x4  main.o [1]
+  .bss               zero     0x2000'00cc     0x4  main.o [1]
+  .bss               zero     0x2000'00d0     0x4  main.o [1]
+  .bss               zero     0x2000'00d4     0x4  main.o [1]
+  .bss               zero     0x2000'00d8     0x1  main.o [1]
+  .bss               zero     0x2000'00d9     0x1  main.o [1]
+  .bss               zero     0x2000'00da     0x1  main.o [1]
+  .bss               zero     0x2000'00db     0x1  main.o [1]
+                            - 0x2000'00dc    0xac
+
+"P2", part 3 of 3:                         0x1000
+  CSTACK                      0x2000'00e0  0x1000  <Block>
+    CSTACK           uninit   0x2000'00e0  0x1000  <Block tail>
+                            - 0x2000'10e0  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x13b0     0x3'ffff  0x3'ec50
+  0x2000'00dc  0x2000'00df       0x4
+  0x2000'10e0  0x2000'7fff    0x6f20
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0xac:
+          0x2000'0030  0xac
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x30:
+               0x127c  0x30
+    1 destination range, total size 0x30:
+          0x2000'0000  0x30
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+C:\Users\minan\Desktop\mid micro\calc final\Debug\Obj: [1]
+    main.o              2'748      112      220
+    -------------------------------------------
+    Total:              2'748      112      220
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+driverlib.a: [3]
+    gpio.o                334
+    sysctl.o              296
+    -------------------------------------------
+    Total:                630
+
+m7M_tls.a: [4]
+    DblCmpEq.o             32
+    DblDiv.o              582
+    DblMul.o              418
+    DblToS32.o             58
+    S32ToDbl.o             34
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:              1'158
+
+rt7M_tl.a: [5]
+    cexit.o                10
+    cmain.o                30
+    copy_init3.o           46
+    cstartup_M.o           12
+    data_init.o            40
+    strlen.o               54
+    vector_table_M.o       66
+    zero_init3.o           58
+    -------------------------------------------
+    Total:                316
+
+shb_l.a: [6]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                   10        2
+    Linker created                  36    4'096
+-----------------------------------------------
+    Grand Total:        4'890      150    4'316
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base        0x12f8          --   Gb  - Linker created -
+.iar.init_table$$Limit       0x131c          --   Gb  - Linker created -
+?main                        0x131d         Code  Gb  cmain.o [5]
+CSTACK$$Base            0x2000'00e0          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'10e0          --   Gb  - Linker created -
+GPIODirModeSet                0xc25   0x28  Code  Gb  gpio.o [3]
+GPIOPadConfigSet              0xc4d  0x102  Code  Gb  gpio.o [3]
+GPIOPinTypeGPIOOutput         0xd57    0xa  Code  Gb  gpio.o [3]
+GPIOPinWrite                  0xd4f    0x8  Code  Gb  gpio.o [3]
+LCD_Clear                     0x2ef   0x10  Code  Gb  main.o [1]
+LCD_Command                   0x1bf   0x7c  Code  Gb  main.o [1]
+LCD_Cursor                    0x2b7   0x38  Code  Gb  main.o [1]
+LCD_Print                     0x2ff   0x50  Code  Gb  main.o [1]
+LCD_Show                      0x23b   0x7c  Code  Gb  main.o [1]
+LCD_init                      0x10b   0xb4  Code  Gb  main.o [1]
+Region$$Table$$Base          0x12f8          --   Gb  - Linker created -
+Region$$Table$$Limit         0x131c          --   Gb  - Linker created -
+SysCtlClockSet                0xb25   0xe0  Code  Gb  sysctl.o [3]
+SysCtlDelay                   0xb1d    0x8  Code  Gb  sysctl.o [3]
+SysCtlPeripheralEnable        0xafd    0x8  Code  Gb  sysctl.o [3]
+__aeabi_cdcmpeq              0x125d         Code  Gb  DblCmpEq.o [4]
+__aeabi_d2iz                 0x1221         Code  Gb  DblToS32.o [4]
+__aeabi_ddiv                  0xe35         Code  Gb  DblDiv.o [4]
+__aeabi_dmul                 0x107d         Code  Gb  DblMul.o [4]
+__aeabi_i2d                   0xe11         Code  Gb  S32ToDbl.o [4]
+__cmain                      0x131d         Code  Gb  cmain.o [5]
+__exit                       0x1351   0x14  Code  Gb  exit.o [6]
+__iar_copy_init3              0xde3   0x2e  Code  Gb  copy_init3.o [5]
+__iar_data_init3             0x12ad   0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp               0x12d5         Code  Gb  fpinit_M.o [4]
+__iar_program_start          0x13a5         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3              0xd73   0x3a  Code  Gb  zero_init3.o [5]
+__low_level_init             0x133b    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0         Data  Gb  vector_table_M.o [5]
+_call_main                   0x1329         Code  Gb  cmain.o [5]
+_exit                        0x1345         Code  Gb  cexit.o [5]
+_main                        0x1337         Code  Gb  cmain.o [5]
+ans                     0x2000'0030   0x40  Data  Gb  main.o [1]
+ans_dec                 0x2000'0070   0x40  Data  Gb  main.o [1]
+c                       0x2000'0020   0x10  Data  Gb  main.o [1]
+calc                          0x34f   0x44  Code  Gb  main.o [1]
+col_init                       0x73   0x32  Code  Gb  main.o [1]
+count                   0x2000'00c4    0x4  Data  Gb  main.o [1]
+decimal                 0x2000'00d0    0x4  Data  Gb  main.o [1]
+delayMs                        0xf1   0x1a  Code  Gb  main.o [1]
+exit                         0x133f    0x4  Code  Gb  exit.o [2]
+func                    0x2000'00d8    0x1  Data  Gb  main.o [1]
+hit                     0x2000'00da    0x1  Data  Gb  main.o [1]
+key_pressed                    0xa5   0x4c  Code  Gb  main.o [1]
+keys                    0x2000'0000   0x10  Data  Gb  main.o [1]
+main                          0x395  0x6d8  Code  Gb  main.o [1]
+num1                    0x2000'00b8    0x4  Data  Gb  main.o [1]
+num1_dec                0x2000'00d4    0x4  Data  Gb  main.o [1]
+num2                    0x2000'00bc    0x4  Data  Gb  main.o [1]
+r                       0x2000'0010   0x10  Data  Gb  main.o [1]
+rem                     0x2000'00b0    0x8  Data  Gb  main.o [1]
+res                     0x2000'00d9    0x1  Data  Gb  main.o [1]
+res_dec                 0x2000'00db    0x1  Data  Gb  main.o [1]
+result                  0x2000'00c0    0x4  Data  Gb  main.o [1]
+row_init                       0x41   0x32  Code  Gb  main.o [1]
+sign1                   0x2000'00c8    0x4  Data  Gb  main.o [1]
+sign2                   0x2000'00cc    0x4  Data  Gb  main.o [1]
+strlen                        0xdad         Code  Gb  strlen.o [5]
+
+
+[1] = C:\Users\minan\Desktop\mid micro\calc final\Debug\Obj
+[2] = dl7M_tln.a
+[3] = driverlib.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  4'890 bytes of readonly  code memory
+    150 bytes of readonly  data memory
+  4'316 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
